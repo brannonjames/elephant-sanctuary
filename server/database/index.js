@@ -3,7 +3,6 @@ const pool = require('./config');
 // Custom ORM Methods
 
 exports.create = (model, data) => {
-
   // build string of columns for query
   // build string of placeholders
   // build array of values
@@ -25,13 +24,14 @@ exports.create = (model, data) => {
 
   return pool.query(`
     INSERT INTO ${model} (${columns})
-    VALUES (${placeholders})
+    VALUES (${placeholders});
   `, [...values])
 }
 
 exports.find = model => {
+  console.log(model);
   const view = `get_${model}`;
-  return pool.query(`SELECT * FROM ${view}`);
+  return pool.query(`SELECT * FROM ${view};`);
 }
 
 exports.findByIdAndUpdate = (model, id, data) => {
@@ -40,21 +40,25 @@ exports.findByIdAndUpdate = (model, id, data) => {
 
   // create a string of SETs
   // { name: 'bobby', age: 20 } -> "SET name = 'bobby' SET age = 20"
-  const updateStr = Object.keys(data).reduce((acc, val, i, arr) => {
-    acc += `SET ${val} = $${i + 1} `;
+  const updateStr = Object.keys(data).reduce((acc, key, i, arr) => {
+    if (i < arr.length - 1) {
+      acc += `${key} = $${i + 1}, `;
+    } else {
+      acc += `${key} = $${i + 1}`;
+    }
     return acc;
   }, '');
 
   return pool.query(`
     UPDATE ${model}
-    ${updateStr}
-    WHERE id = ${values.length + 1}
+    SET ${updateStr}
+    WHERE id = $${values.length + 1};
   `, [...values, id]);
 }
 
 exports.findByIdAndRemove = (model, id) => {
   return pool.query(`
     DELETE FROM ${model}
-    WHERE id = $1
+    WHERE id = $1;
   `, [id])
 }
