@@ -35,10 +35,6 @@ app.service('apiService', ['$http', function($http){
           }
         })
     })
-    .then(function(){
-      console.log(self.wildElephants);
-      console.log(self.sanctuary);
-    })
   }
 
   self.serverCall = {
