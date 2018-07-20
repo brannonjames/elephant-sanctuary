@@ -1,7 +1,6 @@
-<h1>Elephants!!! {{ vm.title }}</h1>
-
+<!-- <h1>Elephants</h1> -->
 <ul>
-  <li ng-repeat="elephant in vm.elephants">
+  <li ng-repeat="elephant in vm.elephants | filter:elephant.checkedIn">
 
     <wild-elephant></wild-elephant>
     

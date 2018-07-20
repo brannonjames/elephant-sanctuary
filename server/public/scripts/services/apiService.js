@@ -1,21 +1,44 @@
 app.service('apiService', ['$http', function($http){
   const self = this;
 
-  self.handleError = function(error){
-    console.log(error);
-  }
+  
 
-  self.reddit = {
-    get: function(){
-      return $http({
-        method: 'GET',
-        url: 'https://www.reddit.com/r/babyelephantgifs/.json',
-      })
-      .then(function(response){
-        return response.data.data.children;
-      })
-      .catch(self.handleError)
-    }
+  self.wildElephants = { all:[] };
+  self.sanctuary = { all: [] };
+
+  self.redditElephants = [];
+
+  self.loadInitialDataFromReddit = function(){
+    $http({
+      method: 'GET',
+      url: 'https://www.reddit.com/r/babyelephantgifs/.json',
+    })
+    .then(function(response){
+      self.redditElephants = response.data.data.children;
+      return self.serverCall.get('/elephants');
+    })
+    .then(function(elephantsFromServer){
+      self.sanctuary.all = elephantsFromServer
+      self.wildElephants.all = self.redditElephants
+        .filter(function(elephantFromReddit){
+          return elephantsFromServer.every(function(elephantFromServer){
+            return elephantFromServer.reddit_id !== elephantFromReddit.data.id;
+          }) && elephantFromReddit.data.preview.images[0].variants.gif &&
+          elephantFromReddit.data.thumbnail;
+            
+        })
+        .map(function(elephantFromReddit){
+          return {
+            url: elephantFromReddit.data.preview.images[0].variants.gif.source.url,
+            thumbnail: elephantFromReddit.data.thumbnail,
+            reddit_id: elephantFromReddit.data.id
+          }
+        })
+    })
+    .then(function(){
+      console.log(self.wildElephants);
+      console.log(self.sanctuary);
+    })
   }
 
   self.serverCall = {
@@ -53,5 +76,7 @@ app.service('apiService', ['$http', function($http){
       .catch(self.handleError)
     }
   }
+
+  self.loadInitialDataFromReddit();
 
 }]);

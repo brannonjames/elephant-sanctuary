@@ -1,3 +1,18 @@
 <div class="card wild-elephant-card">
-  <img ng-src=" {{ elephant.data.preview.images[0].variants.gif.source.url }} " />
+  <img ng-src=" {{ elephant.gif }} " />
+  <button ng-click="vm.checkElephant">Check In</button>
 </div>
+
+<!-- <div 
+  class="card wild-elephant-card" 
+  id="flip-card" 
+  ng-click="flipped = !flipped" 
+  ng-init="flipped = false"
+>
+  <div ng-class="{ 'flip-Y': flipped, 'card-content': true }">
+    <div class="front">
+        <img ng-src=" {{ elephant.data.preview.images[0].variants.gif.source.url }} " />
+    </div>
+    <div class="back">Side 2</div>
+  </div> 
+</div> -->

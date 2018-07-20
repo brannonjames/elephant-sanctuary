@@ -3,6 +3,7 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: 'Lato', sans-serif;
 }
 
 ul {
@@ -74,6 +75,28 @@ h1 {
 
 /* cards */
 
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  margin: 5%;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
 
+
+.wild-elephant-card img {
+  width: 96%;
+  margin: 4px 0;
+}
+
+.wild-elephant-card button {
+  align-self: flex-end;
+}
+
+button {
+  font-size: 1.2em;
+  padding: 8px;
+}
 
 
