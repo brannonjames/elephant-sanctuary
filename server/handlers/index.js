@@ -6,7 +6,6 @@ const { create, find, findByIdAndUpdate, findByIdAndRemove } = require('../datab
 exports.handleGet = async (model, req, res, next) => {
   try {
 
-    console.log(model)
     const data = await find(model);
     res.send(data.rows);
 

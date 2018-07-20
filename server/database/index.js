@@ -29,7 +29,6 @@ exports.create = (model, data) => {
 }
 
 exports.find = model => {
-  console.log(model);
   const view = `get_${model}`;
   return pool.query(`SELECT * FROM ${view};`);
 }

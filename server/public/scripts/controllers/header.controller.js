@@ -4,6 +4,5 @@ app.controller('HeaderController', [function(){
   self.open = false;
   self.toggleMenu = function(){
     self.open = !self.open;
-    console.log(self.open);
   }
 }]);
