@@ -39,7 +39,7 @@ exports.findByIdAndUpdate = (model, id, data) => {
   const values = Object.values(data);
 
   // create a string of SETs
-  // { name: 'bobby', age: 20 } -> "SET name = 'bobby' SET age = 20"
+  // { name: 'bobby', age: 20 } -> "name = 'bobby', age = 20"
   const updateStr = Object.keys(data).reduce((acc, key, i, arr) => {
     if (i < arr.length - 1) {
       acc += `${key} = $${i + 1}, `;

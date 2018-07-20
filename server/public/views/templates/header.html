@@ -1,3 +1,27 @@
 <header>
-  <nav-bar></nav-bar>
+  <button
+    id="menuBtn"
+    ng-click="vm.toggleMenu()"
+  >
+    Menu
+  </button>
+  <h2>BES</h2>
 </header>
+<nav>
+    <ul ng-class="{ 'open-menu': vm.open }">
+
+      <li>
+        <a href="/#!/">Elephants</a>
+        {{ vm.message }}
+      </li>
+
+      <li>
+          <a href="/#!/sanctuary">Sanctuary</a>
+      </li>
+
+      <li>
+          <a href="/#!/humans">Humans</a>
+      </li>
+
+    </ul>
+  </nav>

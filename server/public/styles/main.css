@@ -1,0 +1,79 @@
+/* resets */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2 {
+  margin: 0;
+}
+
+/* header */
+
+
+header {
+  height: 60px;
+  background-color: #75B9BE;
+  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header #menuBtn {
+  float: left;
+  height: 100%;
+  position: absolute;
+  left: 0;
+}
+
+header h2 {
+  display: inline;
+}
+
+
+nav ul {
+  position: absolute;
+  background-color: #75B9BE;
+  opacity: 0.95;
+  top: 60px;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  transition: 100ms linear;
+
+  height: 0;
+}
+
+.open-menu {
+  height: 200px;
+}
+
+nav ul li a {
+  font-size: 1.4em;
+  color: white;
+  margin: 20px;
+}
+
+/* headers */
+
+h1 {
+  text-align: center;
+}
+
+
+/* cards */
+
+
+
+

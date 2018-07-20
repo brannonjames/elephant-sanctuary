@@ -2,6 +2,7 @@ app.controller('ElephantsController', ['apiService', function(apiService) {
   const self = this;
   
   
+
   apiService.reddit.get()
     .then(function(elephants){
       console.log(elephants);
@@ -13,4 +14,4 @@ app.controller('ElephantsController', ['apiService', function(apiService) {
       console.log(elephants);
     });  
 
-}]);
+}])
