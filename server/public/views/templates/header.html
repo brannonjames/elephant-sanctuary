@@ -11,16 +11,16 @@
     <ul ng-class="{ 'open-menu': vm.open }">
 
       <li>
-        <a href="/#!/">Elephants</a>
+        <a href="/#!/" ng-click="vm.closeMenu()">Elephants</a>
         {{ vm.message }}
       </li>
 
       <li>
-          <a href="/#!/sanctuary">Sanctuary</a>
+          <a href="/#!/sanctuary" ng-click="vm.closeMenu()">Sanctuary</a>
       </li>
 
       <li>
-          <a href="/#!/humans">Humans</a>
+          <a href="/#!/humans" ng-click="vm.closeMenu()">Humans</a>
       </li>
 
     </ul>
