@@ -18,7 +18,6 @@ app.controller('NewElephantController', ['apiService', '$location', function(api
       url: apiService.elephantToCheckIn.url,
       reddit_id: apiService.elephantToCheckIn.reddit_id
     }
-    console.log(newElephant)
   }
 
 }])
