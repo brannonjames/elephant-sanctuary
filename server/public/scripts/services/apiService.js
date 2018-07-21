@@ -84,7 +84,6 @@ app.service('apiService', ['$http', function($http){
   self.serverCall.get('/humans')
   .then(function(humans){
     self.humans.all = humans;
-    console.log(self.humans);
-  })
+  });
 
 }]);
