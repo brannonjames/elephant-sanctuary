@@ -23,3 +23,11 @@ app.config(['$routeProvider', function ($routeProvider) {
         })
         .otherwise( { redirectTo: '/' });
 }]);
+
+app.run(['$rootScope', 'apiService', function($rootScope, apiService) {
+  $rootScope.$on("$locationChangeSuccess", function(event, next, current) { 
+      console.log(event);   
+      console.log(next);   
+      console.log(current); 
+  });
+}]);
