@@ -1,0 +1,32 @@
+<div class="card sanctuary-elephant-card" ng-init="gif = false">
+  <div class="details">
+    <div class="thumbnail">
+      <img ng-src="{{ elephant.thumbnail }}" ng-click="gif = true" />
+      <div class="check-out-btn">
+        <button>Checkout</button>
+      </div>
+    </div>
+    
+    <div>
+      <h3>{{ elephant.name }}</h3>
+    </div>
+  
+    <div>
+        <p>Status: <span>Checked-In</span></p>
+    </div>
+  
+    
+    <div class="radio-buttons" ng-init="values = [1,2,3,4,5]">
+      <label>Happiness Level</label>
+      <div>
+        <div ng-repeat="num in values">
+          <label for="happiness-level-{{num}}">{{num}}</label>
+          <input type="radio" ng-model="vm.elephant.happiness_level" value="{{num}}" id="happiness-level-{{num}}" />
+        </div>
+      </div>
+    </div>
+    <div class="gif" ng-show="gif" ng-click="gif = false" >
+        <img ng-src="{{elephant.url}}" />
+    </div>
+  </div>
+</div>

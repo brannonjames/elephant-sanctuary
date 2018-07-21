@@ -8,3 +8,6 @@ app
 .directive('human', function(){
   return { templateUrl: 'views/templates/human-card.html' }
 })
+.directive('sanctuaryElephant', function(){
+  return { templateUrl: 'views/templates/sanctuary-elephant-card.html' }
+});

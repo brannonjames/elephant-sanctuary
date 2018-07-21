@@ -52,7 +52,7 @@ nav ul {
   flex-direction: column;
   justify-content: space-around;
   transition: 100ms linear;
-
+  z-index: 10;
   height: 0;
 }
 
@@ -99,6 +99,37 @@ button {
   padding: 8px;
 }
 
+.sanctuary-elephant-card {
+  position: relative;
+}
+
+.sanctuary-elephant-card .details {
+  width: 90%;
+  margin: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.sanctuary-elephant-card .thumbnail {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.sanctuary-elephant-card .gif {
+  background-color: white;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.sanctuary-elephant-card .gif img {
+  width: 100%;
+}
+
 
 /* form */
 
@@ -125,16 +156,16 @@ button {
   width: 100%;
 }
 
-.new-form .radio-buttons > div {
+.radio-buttons > div {
   display: flex;
   justify-content: space-around;
 }
 
-.new-form .radio-buttons > label {
+.radio-buttons > label {
   margin-bottom: 6px;
 }
 
-.new-form .radio-buttons > div > div {
+.radio-buttons > div > div {
   display: flex;
   align-items: center;
   padding: 8px;

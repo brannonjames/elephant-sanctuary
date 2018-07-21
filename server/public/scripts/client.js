@@ -11,7 +11,8 @@ app.config(['$routeProvider', function ($routeProvider) {
           controller: 'NewElephantController as vm'
         })
         .when('/sanctuary', {
-          templateUrl: 'views/sanctuary.html'
+          templateUrl: 'views/sanctuary.html',
+          controller: 'SanctuaryController as vm'
         })
         .when('/humans', {
           templateUrl: 'views/humans.html',
@@ -25,9 +26,7 @@ app.config(['$routeProvider', function ($routeProvider) {
 }]);
 
 app.run(['$rootScope', 'apiService', function($rootScope, apiService) {
-  $rootScope.$on("$locationChangeSuccess", function(event, next, current) { 
-      console.log(event);   
-      console.log(next);   
-      console.log(current); 
+  $rootScope.$on("$locationChangeStart", function(event, next, current) { 
+      console.log(current);
   });
 }]);
