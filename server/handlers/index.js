@@ -18,7 +18,6 @@ exports.handleGet = async (model, req, res, next) => {
 
 exports.handlePost = async (model, req, res, next) => {
   try {
-
     await create(model, req.body);
     res.sendStatus(200);
 

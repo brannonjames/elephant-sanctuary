@@ -4,11 +4,11 @@ app.controller('NewElephantController', ['apiService', '$location', function(api
   self.humans = apiService.humans;
 
   // in case someone goes directly to /add without choosing an elephant
-  // self.redirectWithNoElephantChoosen = function(){
-  //   if (Object.keys(apiService.elephantToCheckIn).length === 0) {
-  //     $location.path('/');
-  //   }
-  // }();
+  self.redirectWithNoElephantChoosen = function(){
+    if (Object.keys(apiService.elephantToCheckIn).length === 0) {
+      $location.path('/');
+    }
+  }();
 
   self.addElephant = function(elephant){
     const newElephant = {
@@ -19,6 +19,16 @@ app.controller('NewElephantController', ['apiService', '$location', function(api
       url: apiService.elephantToCheckIn.url,
       reddit_id: apiService.elephantToCheckIn.reddit_id
     }
+    apiService.serverCall.post('/elephants', newElephant)
+    .then(function(){
+      return apiService.serverCall.get('/elephants');
+    })
+    .then(function(elephants){
+      return apiService.loadInitialDataFromReddit();
+    })
+    .then(function(){
+      $location.path('/sanctuary');
+    })
   }
 
 }])
