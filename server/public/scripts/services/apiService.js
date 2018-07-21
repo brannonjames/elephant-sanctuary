@@ -1,4 +1,4 @@
-app.service('apiService', ['$http', function($http){
+app.service('apiService', ['$http', '$location', function($http, $location){
   const self = this;
 
   
@@ -9,6 +9,15 @@ app.service('apiService', ['$http', function($http){
   self.elephantToCheckIn = {};
 
   self.redditElephants = [];
+  self.flash = {
+    message: '',
+    type: ''
+  }
+
+  self.handleError = function(error){
+    self.flash.message = error.data.message;
+    self.flash.type = 'error';
+  }
 
   self.loadInitialDataFromReddit = function(){
     $http({

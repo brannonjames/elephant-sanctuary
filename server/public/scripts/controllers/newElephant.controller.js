@@ -28,6 +28,8 @@ app.controller('NewElephantController', ['apiService', '$location', function(api
     })
     .then(function(){
       $location.path('/sanctuary');
+      apiService.flash.message = 'Elephant checked in';
+      apiService.flash.type = 'success';
     })
   }
 
