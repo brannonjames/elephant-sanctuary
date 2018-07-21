@@ -15,6 +15,11 @@ app.config(['$routeProvider', function ($routeProvider) {
         })
         .when('/humans', {
           templateUrl: 'views/humans.html',
+          controller: 'HumansController as vm'
+        })
+        .when('/humans/add', {
+          templateUrl: 'views/addHuman.html',
+          controller: 'NewHumanController as vm'
         })
         .otherwise( { redirectTo: '/' });
 }]);

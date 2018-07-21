@@ -1,6 +1,7 @@
 app.controller('NewElephantController', ['apiService', '$location', function(apiService, $location) {
   const self = this;
   self.elephant = {};
+  self.humans = apiService.humans;
 
   // in case someone goes directly to /add without choosing an elephant
   // self.redirectWithNoElephantChoosen = function(){
