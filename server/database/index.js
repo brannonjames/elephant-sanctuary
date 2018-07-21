@@ -1,6 +1,7 @@
 const pool = require('./config');
 
-// Custom ORM Methods
+// kinda taking a stab at a custom ORM, inspired by sequelize and mongoose methods
+// totally unnecessary but could probably drop into any future SQL projects pretty easily
 
 exports.create = (model, data) => {
   // build string of columns for query

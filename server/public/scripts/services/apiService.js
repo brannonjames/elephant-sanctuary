@@ -20,6 +20,9 @@ app.service('apiService', ['$http', function($http){
       return self.serverCall.get('/elephants');
     })
     .then(function(elephantsFromServer){
+
+      // take all the elephants I get from reddit and filter out the ones already
+      // have in the database by checking ids
       self.sanctuary.all = elephantsFromServer
       self.wildElephants.all = self.redditElephants
         .filter(function(elephantFromReddit){
@@ -30,6 +33,7 @@ app.service('apiService', ['$http', function($http){
             
         })
         .map(function(elephantFromReddit){
+          // return a clean array of objects with just the columns I need
           return {
             url: elephantFromReddit.data.preview.images[0].variants.gif.source.url,
             thumbnail: elephantFromReddit.data.thumbnail,
