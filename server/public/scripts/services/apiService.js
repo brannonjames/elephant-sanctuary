@@ -2,6 +2,7 @@ app.service('apiService', ['$http', function($http){
   const self = this;
 
   
+  self.humans = { all: [] };
 
   self.wildElephants = { all:[] };
   self.sanctuary = { all: [] };
@@ -75,5 +76,11 @@ app.service('apiService', ['$http', function($http){
   }
 
   self.loadInitialDataFromReddit();
+
+  self.serverCall.get('/humans')
+  .then(function(humans){
+    self.humans.all = humans;
+    console.log(self.humans);
+  })
 
 }]);
