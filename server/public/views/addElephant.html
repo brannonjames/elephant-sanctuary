@@ -1,0 +1,28 @@
+<main>
+  <form ng-submit="vm.addElephant(vm.elephant)" class="card new-form">
+    <div>
+      <label for="name-input">Name</label>
+      <input ng-model="vm.elephant.name" placeholder="Name" id="name-input" />
+    </div>
+
+    <div class="radio-buttons" ng-init="values = [1,2,3,4,5]">
+      <label>Happiness Level</label>
+      <div>
+        <div ng-repeat="num in values">
+          <label for="happiness-level-{{num}}">{{num}}</label>
+          <input type="radio" ng-model="vm.elephant.happiness_level" value="{{num}}" id="happiness-level-{{num}}" />
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <label for="owner-input">Owner</label>
+      <select ng-model="vm.elephant.owner">
+        <option disabled value="">-</option>
+        <option ng-repeat="owner in vm.owners" value="{{ owner.id }}">{{ owner.name }}</option>
+      </select>
+    </div>
+
+    <button>Submit</button>
+  </form>
+</main>

@@ -2,5 +2,9 @@ app.controller('ElephantsController', ['apiService', '$location', function(apiSe
   const self = this;
    
   self.wildElephants = apiService.wildElephants;
+  self.checkElephant = function(elephant){
+    apiService.elephantToCheckIn = elephant;
+    $location.path('/newelephant');
+  }
 
 }])

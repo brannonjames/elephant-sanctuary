@@ -5,6 +5,7 @@ app.service('apiService', ['$http', function($http){
 
   self.wildElephants = { all:[] };
   self.sanctuary = { all: [] };
+  self.elephantToCheckIn = {};
 
   self.redditElephants = [];
 

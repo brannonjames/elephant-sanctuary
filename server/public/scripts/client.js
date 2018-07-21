@@ -6,6 +6,10 @@ app.config(['$routeProvider', function ($routeProvider) {
           templateUrl: 'views/elephants.html',
           controller: 'ElephantsController as vm'
         })
+        .when('/newelephant', {
+          templateUrl: 'views/addElephant.html',
+          controller: 'NewElephantController as vm'
+        })
         .when('/sanctuary', {
           templateUrl: 'views/sanctuary.html'
         })
