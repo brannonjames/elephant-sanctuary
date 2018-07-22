@@ -13,7 +13,7 @@ app.service('apiService', ['$http', function($http){
   self.loadInitialDataFromReddit = function(){
     $http({
       method: 'GET',
-      url: 'https://www.reddit.com/r/babyelephantgifs/.json',
+      url: 'https://www.reddit.com/r/babyelephantgifs/.json?limit=12',
     })
     .then(function(response){
       self.redditElephants = response.data.data.children;
