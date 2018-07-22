@@ -23,7 +23,9 @@ exports.handlePost = async (model, req, res, next) => {
 
   } catch (err) {
     
-    next(err);
+    next({
+      message: 'Please fill out all fields'
+    });
 
   }
 }

@@ -34,5 +34,6 @@ app.run(['$rootScope', 'apiService', function($rootScope, apiService) {
   $rootScope.header = {};
   $rootScope.$on("$routeChangeSuccess", function(event, current, previous) {
       $rootScope.header.text = current.title;
+      // apiService.flash = {};
   });
 }]);
