@@ -4,7 +4,7 @@ app.controller('ElephantsController', ['apiService', '$location', function(apiSe
   self.wildElephants = apiService.wildElephants;
   self.checkElephant = function(elephant){
     apiService.elephantToCheckIn = elephant;
-    $location.path('/newelephant');
+    $location.path('/elephants/new');
   }
 
 }])

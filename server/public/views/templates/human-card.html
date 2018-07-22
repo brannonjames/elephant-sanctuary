@@ -1,3 +1,16 @@
-<div class="card">
-  {{ human.name }}
+<div class="card human-card">
+  <div>
+    {{ human.name }}
+  </div>
+  <div>
+    Elephants: {{ human.elephant_count }}
+  </div>
+  <div>
+    <button 
+      class="btn danger"
+      ng-click="vm.deleteUser(human)"
+    >
+      Delete
+    </button>
+  </div>
 </div>

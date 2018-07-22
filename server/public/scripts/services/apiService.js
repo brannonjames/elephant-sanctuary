@@ -81,9 +81,12 @@ app.service('apiService', ['$http', function($http){
 
   self.loadInitialDataFromReddit();
 
-  self.serverCall.get('/humans')
-  .then(function(humans){
-    self.humans.all = humans;
-  });
+
+  self.getHumans = function(){
+    self.serverCall.get('/humans')
+      .then(function(humans){
+        self.humans.all = humans;
+    })
+  }
 
 }]);

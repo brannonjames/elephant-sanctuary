@@ -7,7 +7,7 @@ app.config(['$routeProvider', function($routeProvider) {
           templateUrl: 'views/elephants.html',
           controller: 'ElephantsController as vm'
         })
-        .when('/newelephant', {
+        .when('/elephants/new', {
           title: 'Add Elephant',
           templateUrl: 'views/addElephant.html',
           controller: 'NewElephantController as vm'
