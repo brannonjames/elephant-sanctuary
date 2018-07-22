@@ -1,4 +1,4 @@
-app.controller('HumansController', ['apiService', '$location', function(apiService, $location) {
+app.controller('HumansController', ['apiService', '$location', 'alert', function(apiService, $location, alert) {
   const self = this;
   
   self.humans = apiService.humans;
@@ -8,15 +8,18 @@ app.controller('HumansController', ['apiService', '$location', function(apiServi
 
   self.deleteUser = function(user){
     if(user.elephant_count > 0){
-      console.log('Cant delete with checked in elephants');
+      alert.show(`Can't delete, ${user.name} has elephants`, true);
     } else {
-      apiService.serverCall.delete(`/humans/${user.id}`)
+      console.log('callback')
+      alert.show(`Delete ${user.name}?`, false, function(){
+        apiService.serverCall.delete(`/humans/${user.id}`)
         .then(function(){
           return apiService.serverCall.get('/humans');
         })
         .then(function(humans){
           apiService.humans.all = humans
-        })
+        });
+      });
     }
   }
 

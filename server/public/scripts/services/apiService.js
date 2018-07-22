@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 app.service('apiService', ['$http', '$location', function($http, $location){
+=======
+app.service('apiService', ['$http', 'alert', function($http, alert){
+>>>>>>> alert
   const self = this;
 
   
@@ -17,6 +21,11 @@ app.service('apiService', ['$http', '$location', function($http, $location){
   self.handleError = function(error){
     self.flash.message = error.data.message;
     self.flash.type = 'error';
+  }
+
+  self.handleError = function(err){
+    // alert.show(err.data.message, true);
+    alert.current.message = err.data.message;
   }
 
   self.loadInitialDataFromReddit = function(){
@@ -69,7 +78,6 @@ app.service('apiService', ['$http', '$location', function($http, $location){
         url: url,
         data: data
       })
-      .catch(self.handleError)
     },
     update: function(url, data){
       return $http({

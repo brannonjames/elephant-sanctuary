@@ -1,4 +1,4 @@
-app.controller('NewElephantController', ['apiService', '$location', function(apiService, $location) {
+app.controller('NewElephantController', ['apiService', '$location', 'alert', function(apiService, $location, alert) {
   const self = this;
   self.elephant = {};
   self.humans = apiService.humans;
@@ -31,6 +31,14 @@ app.controller('NewElephantController', ['apiService', '$location', function(api
       apiService.flash.message = 'Elephant checked in';
       apiService.flash.type = 'success';
     })
+    .catch(function(err){
+      alert.show(err.data.message, true);
+    })
   }
+
+  apiService.serverCall.get('/humans')
+    .then(function(humans){
+      apiService.humans.all = humans;
+    })
 
 }])
