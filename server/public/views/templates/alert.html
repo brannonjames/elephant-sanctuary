@@ -9,8 +9,8 @@
       </div>
     
       <div ng-show="!vm.alert.dismissive" class="alert-buttons">
-        <button class="btn" ng-click="vm.hide()">NO</button>
-        <button class="btn" ng-click="vm.onYesClick()">YES</button>
+        <button class="btn btn-dismiss" ng-click="vm.onNoClick()">NO</button>
+        <button class="btn danger" ng-click="vm.onYesClick()">YES</button>
       </div>
     </div>
 </div>

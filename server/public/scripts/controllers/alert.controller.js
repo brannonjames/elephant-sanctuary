@@ -4,8 +4,12 @@ app.controller('AlertController', ['alert', function(alert){
   self.hide = alert.hide;
 
   self.onYesClick = function(){
-    console.log('callback')
     alert.current.callback();
     alert.hide()
   }
+
+  self.onNoClick = function(){
+    alert.hide();
+  }
+
 }]);

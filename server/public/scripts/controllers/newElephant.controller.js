@@ -34,4 +34,9 @@ app.controller('NewElephantController', ['apiService', '$location', 'alert', fun
     })
   }
 
+  apiService.serverCall.get('/humans')
+    .then(function(humans){
+      apiService.humans.all = humans;
+    })
+
 }])

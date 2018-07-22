@@ -1,4 +1,4 @@
-app.controller('SanctuaryController', ['apiService', function(apiService){
+app.controller('SanctuaryController', ['apiService', 'alert', function(apiService, alert){
   const self = this;
 
   self.elephants = apiService.sanctuary;
@@ -14,14 +14,18 @@ app.controller('SanctuaryController', ['apiService', function(apiService){
       })
   }
 
-  self.checkoutElephant = function(id) {
-    apiService.serverCall.delete(`/elephants/${id}`)
+  self.checkoutElephant = function(elephant) {
+    console.log('18')
+    alert.show(`Checkout ${elephant.name}?`, false, function(){
+      console.log('20')
+      apiService.serverCall.delete(`/elephants/${elephant.id}`)
       .then(function(){
         return apiService.serverCall.get('/elephants');
       })
       .then(function(updatedElephants){
         apiService.sanctuary.all = updatedElephants;
-      })
+      });
+    });
   }
 
 }]);
