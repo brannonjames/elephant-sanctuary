@@ -15,9 +15,7 @@ app.controller('SanctuaryController', ['apiService', 'alert', function(apiServic
   }
 
   self.checkoutElephant = function(elephant) {
-    console.log('18')
     alert.show(`Checkout ${elephant.name}?`, false, function(){
-      console.log('20')
       apiService.serverCall.delete(`/elephants/${elephant.id}`)
       .then(function(){
         return apiService.serverCall.get('/elephants');
