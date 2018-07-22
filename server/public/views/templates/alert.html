@@ -1,0 +1,16 @@
+<div class="alert-container" ng-show="vm.alert.visible" >
+  <div class="alert">
+      <div class="alert-message">
+          {{ vm.alert.message }}
+      </div>
+    
+      <div ng-show="vm.alert.dismissive" class="alert-buttons">
+        <button class="btn" ng-click="vm.hide()">OK</button>
+      </div>
+    
+      <div ng-show="!vm.alert.dismissive" class="alert-buttons">
+        <button class="btn" ng-click="vm.hide()">NO</button>
+        <button class="btn" ng-click="vm.callback()">YES</button>
+      </div>
+    </div>
+</div>

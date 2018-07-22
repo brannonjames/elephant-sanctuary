@@ -1,4 +1,4 @@
-app.controller('NewElephantController', ['apiService', '$location', function(apiService, $location) {
+app.controller('NewElephantController', ['apiService', '$location', 'alert', function(apiService, $location, alert) {
   const self = this;
   self.elephant = {};
   self.humans = apiService.humans;
@@ -28,6 +28,9 @@ app.controller('NewElephantController', ['apiService', '$location', function(api
     })
     .then(function(){
       $location.path('/sanctuary');
+    })
+    .catch(function(err){
+      alert.show(err.data.message, true);
     })
   }
 

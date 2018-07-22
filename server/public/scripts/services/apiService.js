@@ -1,4 +1,4 @@
-app.service('apiService', ['$http', function($http){
+app.service('apiService', ['$http', 'alert', function($http, alert){
   const self = this;
 
   
@@ -9,6 +9,11 @@ app.service('apiService', ['$http', function($http){
   self.elephantToCheckIn = {};
 
   self.redditElephants = [];
+
+  self.handleError = function(err){
+    // alert.show(err.data.message, true);
+    alert.current.message = err.data.message;
+  }
 
   self.loadInitialDataFromReddit = function(){
     $http({
@@ -60,7 +65,6 @@ app.service('apiService', ['$http', function($http){
         url: url,
         data: data
       })
-      .catch(self.handleError)
     },
     update: function(url, data){
       return $http({
