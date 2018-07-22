@@ -310,26 +310,6 @@ input[type=radio]:hover {
   cursor: pointer;
 }
 
-/* Flash */
-
-.flash {
-  font-size: 1.4em;
-  border-radius: 5px;
-  width: 84%;
-  margin: 4%;
-  padding: 4%;
-}
-
-.flash-error {
-  background-color: #ffbabc;
-  color: #6d0003;
-}
-
-.flash-success {
-  background-color: #c4ffc8;
-  color: #005906;
-}
-
 
 
 
