@@ -2,6 +2,7 @@
 
 CREATE DATABASE elephant_sanctuary;
 
+
 CREATE TABLE humans (
 	id SERIAL PRIMARY KEY,
 	name VARCHAR(20),
@@ -13,8 +14,9 @@ CREATE TABLE elephants (
 	name VARCHAR(20),
 	owner integer REFERENCES humans,
 	happiness_level integer,
-	preview_url text,
-	url text,
+	thumbnail VARCHAR(220),
+	url VARCHAR(220),
+	reddit_id VARCHAR(10),
 	created TIMESTAMP DEFAULT Now()
 );
 
@@ -26,4 +28,5 @@ CREATE VIEW get_humans AS
 	ORDER BY elephant_count DESC;
 	
 CREATE VIEW get_elephants AS
-	SELECT * FROM elephants;
+	SELECT * FROM elephants
+	ORDER BY created DESC;
