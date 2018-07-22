@@ -3,7 +3,8 @@ app.service('alert', [function(){
   self.current = {
     message: '',
     dismissive: false,
-    visible: false
+    visible: false,
+    callback: null
   }
 
   self.show = function(message, dismissive, callback){
