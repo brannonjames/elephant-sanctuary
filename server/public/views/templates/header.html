@@ -3,7 +3,8 @@
     id="menuBtn"
     ng-click="vm.toggleMenu()"
   >
-    Menu
+    <img ng-show="!vm.open" ng-src="styles/icons/burger.svg" />
+    <img ng-show="vm.open" ng-src="styles/icons/close.svg" />
   </button>
   <h2>{{ vm.header.text }}</h2>
 </header>

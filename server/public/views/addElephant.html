@@ -17,12 +17,12 @@
 
     <div>
       <label for="owner-input">Checked in by:</label>
-      <select ng-model="vm.elephant.owner">
+      <select ng-model="vm.elephant.owner" required>
         <option disabled value="">-</option>
         <option ng-repeat="human in vm.humans.all" value="{{ human.id }}">{{ human.name }}</option>
       </select>
     </div>
 
-    <button>Submit</button>
+    <button class="btn">Submit</button>
   </form>
 </main>

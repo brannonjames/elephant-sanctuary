@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Lato', sans-serif;
+  background-color: #dbf9ee
 }
 
 ul {
@@ -16,17 +17,24 @@ h1, h2 {
   margin: 0;
 }
 
+input,
+select {
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+
 /* header */
 
 
 header {
   height: 60px;
-  background-color: #75B9BE;
+  background-color: #50e5ad;
   text-align: center;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
 header #menuBtn {
@@ -34,6 +42,13 @@ header #menuBtn {
   height: 100%;
   position: absolute;
   left: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+header #menuBtn:hover {
+  cursor: pointer;
 }
 
 header h2 {
@@ -43,7 +58,7 @@ header h2 {
 
 nav ul {
   position: absolute;
-  background-color: #75B9BE;
+  background-color: #50e5ad;
   opacity: 0.95;
   top: 60px;
   overflow: hidden;
@@ -54,6 +69,7 @@ nav ul {
   transition: 100ms linear;
   z-index: 10;
   height: 0;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
 .open-menu {
@@ -81,11 +97,12 @@ h1 {
   align-items: center;
   width: 90%;
   margin: 5%;
+  background-color: white;
   box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
 
-.wild-elephant-card img {
+.wild-elephant-card > img {
   width: 96%;
   margin: 4px 0;
 }
@@ -97,26 +114,84 @@ h1 {
 button {
   font-size: 1.2em;
   padding: 8px;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.btn {
+  /* border: 1px solid #005b38; */
+  border-radius: 4px;
+  padding: 10px;
+  margin: 14px auto;
+  background-color: #83f7cb;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
 .sanctuary-elephant-card {
   position: relative;
 }
 
-.sanctuary-elephant-card .details {
+.sanctuary-elephant-card > div {
+  margin: 10px 0;
+}
+
+.sanctuary-elephant-card .content {
   width: 90%;
   margin: 5%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  text-align: center;
+}
+
+.sanctuary-elephant-card .content h3 {
+  font-size: 1.6em;
+}
+
+.sanctuary-elephant-card p,
+.sanctuary-elephant-card h3 {
+  margin: 4px;
 }
 
 .sanctuary-elephant-card .thumbnail {
+  margin: 26px 0;
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  text-decoration: underline;
+}
+
+.sanctuary-elephant-card .details {
+  position: relative;
+}
+
+.sanctuary-elephant-card .check-out-confirm {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.sanctuary-elephant-card .check-out-confirm > div {
+  display: flex;
+  justify-content: space-around;
+  text-decoration: underline;
+  font-size: 1.5em;
+}
+
+.sanctuary-elephant-card .radio-buttons {
+  margin: 28px 0;
 }
 
 .sanctuary-elephant-card .gif {
