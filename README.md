@@ -1,7 +1,11 @@
 # Elephant Sanctuary
 
-A CRUD elephant sanctuary made as a weekend project for users to check elephants into a sanctuary and monitor
+A mobile-first CRUD elephant sanctuary made as a weekend project for users to check elephants into a sanctuary and monitor
 their happiness level.
+
+[Live demo](https://awesome-elephant-sanctuary.herokuapp.com/)
+
+I recently start converting this project as my first React Native [app]()
 
 ## Built With
 
