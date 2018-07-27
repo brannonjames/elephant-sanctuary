@@ -5,7 +5,7 @@ their happiness level.
 
 [Live demo](https://awesome-elephant-sanctuary.herokuapp.com/)
 
-I recently start converting this project as my first React Native [app]()
+I recently start converting this project as my first React Native [app](https://github.com/brannonjames/elephant-sanctuary-native)
 
 ## Built With
 
