@@ -9,7 +9,7 @@ I recently start converting this project as my first React Native [app](https://
 
 ## Built With
 
-AngularJS, CSS5, Node, Express, Postgres
+AngularJS, CSS3, Node, Express, Postgres
 
 ## Getting Started
 
